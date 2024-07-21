@@ -81,16 +81,59 @@ header {
     text-align: center;
 }
 
-.features-grid,
-.testimonials-grid,
-.team-grid,
-.gallery-grid {
-    display: grid;
-    gap: 2rem;
+/* Define the pop-out animation */
+@keyframes popOut {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
+/* Apply the pop-out animation only to specific sections */
+#features .section-container,
+#testimonials .section-container,
+#meet-the-team .section-container,
+#gallery .section-container,
+#faq .section-container {
+    animation: popOut 0.6s ease-out;
+}
+
+/* Optional: Stagger the animations */
+#features .section-container { animation-delay: 0.2s; }
+#testimonials .section-container { animation-delay: 0.4s; }
+#meet-the-team .section-container { animation-delay: 0.6s; }
+#gallery .section-container { animation-delay: 0.8s; }
+#faq .section-container { animation-delay: 1s; }
+
+/* Hover Pop-Out Effect */
+.features-grid .feature-item,
+.testimonials-grid .testimonial-item,
+.team-grid .team-member,
+.gallery-grid img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-grid .feature-item:hover,
+.testimonials-grid .testimonial-item:hover,
+.team-grid .team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
 .features-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
 .feature-item {
@@ -99,26 +142,37 @@ header {
     border-radius: 10px;
 }
 
+/* Testimonials Section */
 .testimonials-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .testimonial-item {
     background-color: #1f1f1f;
     padding: 1.5rem;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
 }
 
-.testimonial-img {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+.testimonial-text {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin: 0 0 0.5rem;
 }
 
+.testimonial-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f5b041;
+}
+
+/* Team Section */
 .team-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .team-member {
@@ -133,6 +187,15 @@ header {
     margin: 0.5rem 0;
 }
 
+/* Targeting specific team members with unique classes */
+.team-name.notsandman {
+    color: white;
+}
+
+.team-name.aussie-bloke {
+    color: white;
+}
+
 .team-role {
     font-size: 1.2rem;
     color: #f5b041;
@@ -142,8 +205,11 @@ header {
     font-size: 1rem;
 }
 
+/* Gallery Section */
 .gallery-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
 .gallery-grid img {

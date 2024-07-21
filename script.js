@@ -1,13 +1,16 @@
-// Toggle FAQ answers
+// script.js
+
+// FAQ Toggle
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        faqItem.classList.toggle('active');
+        const answer = button.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
     });
 });
 
-// Toggle mobile menu
+// Mobile Menu Toggle
 document.getElementById('mobile-menu').addEventListener('click', () => {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    const isVisible = navLinks.classList.toggle('visible');
+    document.getElementById('mobile-menu').setAttribute('aria-expanded', isVisible);
 });
