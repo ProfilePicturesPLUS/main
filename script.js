@@ -4,13 +4,14 @@
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
         const answer = button.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        button.parentElement.classList.toggle('active');
     });
 });
 
 // Mobile Menu Toggle
 document.getElementById('mobile-menu').addEventListener('click', () => {
     const navLinks = document.querySelector('.nav-links');
+    const menuButton = document.getElementById('mobile-menu');
     const isVisible = navLinks.classList.toggle('visible');
-    document.getElementById('mobile-menu').setAttribute('aria-expanded', isVisible);
+    menuButton.setAttribute('aria-expanded', isVisible.toString());
 });
