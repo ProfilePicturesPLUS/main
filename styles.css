@@ -94,7 +94,7 @@ header {
     }
 }
 
-/* Apply the pop-out animation only to specific sections */
+/* Apply the pop-out animation to specific sections */
 #features .section-container,
 #testimonials .section-container,
 #meet-the-team .section-container,
@@ -318,5 +318,19 @@ footer {
 
     #hero p {
         font-size: 1rem;
+    }
+    
+    /* Mobile menu styles */
+    #main-nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    #main-nav.open {
+        display: flex;
+    }
+
+    .faq-answer {
+        display: none;
     }
 }
