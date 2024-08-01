@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProfilePicturePLUS is your go-to source for unique and creative profile pictures for Rec Room. Explore our collection and join our community!">
     <title>ProfilePicturePLUS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="path-to-your-favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+    <header role="banner">
         <div class="header-container">
             <h1>ProfilePicturePLUS</h1>
-            <nav id="main-nav">
+            <nav id="main-nav" role="navigation">
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -25,19 +26,19 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
-                <button id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+                <button id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰ <span class="sr-only">Menu</span></button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <main id="hero" role="main">
         <div class="hero-container">
             <h1>Welcome to ProfilePicturePLUS</h1>
             <p>Your Go To For Free Profile Pictures For Rec Room In ProfilePicturesPLUS!</p>
             <a href="#features" class="btn">Learn More</a>
         </div>
-    </section>
+    </main>
 
     <!-- Video Section -->
     <section id="video">
@@ -64,17 +65,17 @@
             <h2>Features</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <i class="fa fa-image"></i>
+                    <i class="fa fa-image" aria-hidden="true"></i>
                     <h3>Vast Amount Of Images!</h3>
                     <p>There are more than 5000+ images to choose from for your profile picture in our map ProfilePicturesPLUS!</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fa fa-cog"></i>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
                     <h3>Send Your Images Through!</h3>
                     <p>Join our discord server below and head to #pictures and send your images! Please read guidelines and rules before sending anything first!</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fa fa-share"></i>
+                    <i class="fa fa-share" aria-hidden="true"></i>
                     <h3>Sharing!</h3>
                     <p>You made a cool picture for a profile picture and you want to share it? Join the discord server and send it through!</p>
                 </div>
@@ -136,7 +137,7 @@
                 </div>
                 <div class="team-member">
                     <h3 class="team-name">
-                        <a href="https://rec.net/user/Coffee.yo" target="_blank" rel="noopener noreferrer">Saturn <3 </a>
+                        <a href="https://rec.net/user/Coffee.yo" target="_blank" rel="noopener noreferrer">Saturn <3</a>
                     </h3>
                     <p class="team-role">Leading Discord Moderator</p>
                     <p class="team-bio">bazilontop is our leading hand for moderation bazilontop makes sure everyone is not breaking rules and helps out our moderators!</p>
@@ -250,10 +251,10 @@
             <h2>Gallery</h2>
             <p class="gallery-description">These are the type of pictures to expect in our map!</p>
             <div class="gallery-grid">
-                <img src="Pics/gallery1.png" alt="Gallery Image 1">
-                <img src="Pics/gallery2.png" alt="Gallery Image 2">
-                <img src="Pics/gallery3.png" alt="Gallery Image 3">
-                <img src="Pics/gallery4.png" alt="Gallery Image 4">
+                <img src="Pics/gallery1.png" alt="A sample profile picture 1">
+                <img src="Pics/gallery2.png" alt="A sample profile picture 2">
+                <img src="Pics/gallery3.png" alt="A sample profile picture 3">
+                <img src="Pics/gallery4.png" alt="A sample profile picture 4">
             </div>
         </div>
     </section>
@@ -296,9 +297,12 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-container">
             <p class="disclaimer">We do not claim ownership of any images associated with ProfilePicturesPLUS, nor do we sell any images for in-game tokens or real currency. All images provided are free of charge.</p>
+            <ul class="footer-links">
+                <li><a href="#hero">Back to top</a></li>
+            </ul>
         </div>
     </footer>
 

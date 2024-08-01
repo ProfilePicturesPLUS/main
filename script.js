@@ -38,3 +38,30 @@ document.querySelectorAll('.faq-question').forEach(question => {
         answer.style.display = isVisible ? 'none' : 'block';
     });
 });
+
+// Lazy Load Images
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    const config = {
+        rootMargin: '0px 0px 50px 0px',
+        threshold: 0.01
+    };
+
+    const onIntersection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(onIntersection, config);
+
+    images.forEach(image => {
+        if (image.dataset.src) {
+            observer.observe(image);
+        }
+    });
+});
