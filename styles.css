@@ -189,6 +189,7 @@ header {
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
+    border: 2px solid #f5b041; /* Added border for team members */
 }
 
 .team-name {
@@ -203,6 +204,10 @@ header {
 .team-role {
     font-size: 1.2rem;
     color: #f5b041;
+}
+
+.team-bio {
+    font-size: 1rem;
 }
 
 .team-bio {
